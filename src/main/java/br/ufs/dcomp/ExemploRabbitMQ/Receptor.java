@@ -6,19 +6,19 @@ import java.io.IOException;
 
 public class Receptor {
 
-  private final static String QUEUE_NAME = "minha-fila";
+  private final static String QUEUE_NAME = "hello_queue";
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost("ip-da-instancia-da-aws"); // Alterar
-    factory.setUsername("usuário-do-rabbitmq-server"); // Alterar
-    factory.setPassword("senha-do-rabbitmq-server"); // Alterar
-    factory.setVirtualHost("/");   
+    factory.setHost("54.91.112.204"); // Alterar
+    factory.setUsername("admin"); // Alterar
+    factory.setPassword("password"); // Alterar
+    factory.setVirtualHost("/");    
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
 
                       //(queue-name, durable, exclusive, auto-delete, params); 
-    channel.queueDeclare(QUEUE_NAME, false,   false,     false,       null);
+    channel.queueDeclare(QUEUE_NAME, true,   false,     false,       null);
     
     System.out.println(" [*] Esperando recebimento de mensagens...");
 
