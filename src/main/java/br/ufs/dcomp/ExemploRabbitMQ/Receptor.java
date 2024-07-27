@@ -10,7 +10,7 @@ public class Receptor {
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost("54.91.112.204"); // Alterar
+    factory.setHost("34.235.21.200"); // Alterar
     factory.setUsername("admin"); // Alterar
     factory.setPassword("password"); // Alterar
     factory.setVirtualHost("/");    
